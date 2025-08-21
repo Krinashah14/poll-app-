@@ -1,0 +1,207 @@
+/* OptionsForm.css */
+.options-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.options-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.options-count {
+  color: #6b7280;
+  font-size: 0.85rem;
+  font-weight: 400;
+}
+
+.options-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.option-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  background: #f9fafb;
+  border: 2px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 16px;
+  transition: all 0.2s ease;
+}
+
+.option-item:focus-within {
+  border-color: #667eea;
+  background: #f8faff;
+}
+
+.option-number {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  background: #667eea;
+  color: white;
+  border-radius: 50%;
+  font-weight: 600;
+  font-size: 0.9rem;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.option-input-wrapper {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.option-input {
+  border: none;
+  background: transparent;
+  font-size: 1rem;
+  padding: 8px 0;
+  color: #374151;
+  font-weight: 500;
+}
+
+.option-input:focus {
+  outline: none;
+}
+
+.option-input::placeholder {
+  color: #9ca3af;
+  font-weight: 400;
+}
+
+.option-char-count {
+  color: #9ca3af;
+  font-size: 0.75rem;
+  align-self: flex-end;
+}
+
+.option-controls {
+  display: flex;
+  gap: 4px;
+  flex-shrink: 0;
+}
+
+.control-btn {
+  width: 32px;
+  height: 32px;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  background: white;
+  color: #6b7280;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.15s ease;
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+.control-btn:hover:not(:disabled) {
+  background: #f3f4f6;
+  border-color: #9ca3af;
+}
+
+.control-btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.move-btn {
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.remove-btn {
+  color: #ef4444;
+  border-color: #fecaca;
+}
+
+.remove-btn:hover:not(:disabled) {
+  background: #fef2f2;
+  border-color: #ef4444;
+  color: #dc2626;
+}
+
+.add-option-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 16px;
+  border: 2px dashed #d1d5db;
+  border-radius: 12px;
+  background: transparent;
+  color: #6b7280;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-size: 0.95rem;
+}
+
+.add-option-btn:hover {
+  border-color: #667eea;
+  color: #667eea;
+  background: #f8faff;
+}
+
+.add-icon {
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.options-hint {
+  text-align: center;
+  color: #6b7280;
+}
+
+/* Animation for new options */
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.option-item:last-child {
+  animation: slideIn 0.3s ease-out;
+}
+
+/* Responsive */
+@media (max-width: 640px) {
+  .option-item {
+    padding: 12px;
+    gap: 8px;
+  }
+  
+  .option-number {
+    width: 28px;
+    height: 28px;
+    font-size: 0.8rem;
+  }
+  
+  .control-btn {
+    width: 28px;
+    height: 28px;
+    font-size: 0.8rem;
+  }
+  
+  .option-controls {
+    flex-direction: column;
+    gap: 2px;
+  }
+}
